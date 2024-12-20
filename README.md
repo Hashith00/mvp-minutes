@@ -34,3 +34,19 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Clerk Webhook
+
+To create a webhook in Clerk, you need to add the webhook URL to the Clerk dashboard.
+
+The webhook URL is `https://your-nextjs-app-url/api/webhooks/clerk`.
+
+The webhook secret is `webhook-secret`.
+
+Read more about Clerk webhooks [here](https://clerk.com/docs/webhooks/sync-data).
+
+## Tips for LemonSqueezy
+
+- First create subscription plans in Lemon Squeezy.
+- Then get the API key from the Lemon Squeezy dashboard.
+# mvp-minutes
