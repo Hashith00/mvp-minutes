@@ -13,7 +13,7 @@ const NavBar = () => {
           <div className="flex">
             <Link href="/" className="flex items-center">
               <span className="text-xl font-bold text-blue-600">
-                SaaS Template
+                MVP in Minutes
               </span>
             </Link>
           </div>
@@ -36,17 +36,12 @@ const NavBar = () => {
 
           {/* Desktop menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link
-              href="#features"
-              className="text-gray-600 hover:text-gray-900"
-            >
-              Features
+            <Link href="/blog" className="text-gray-600 hover:text-gray-900">
+              Blogs
             </Link>
-            <Link href="#pricing" className="text-gray-600 hover:text-gray-900">
+
+            <Link href="/pricing" className="text-gray-600 hover:text-gray-900">
               Pricing
-            </Link>
-            <Link href="#docs" className="text-gray-600 hover:text-gray-900">
-              Documentation
             </Link>
             <Link
               href="/signup"

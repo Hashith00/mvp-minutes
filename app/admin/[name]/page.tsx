@@ -1,11 +1,38 @@
 "use client";
 import React, { useState, useRef } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const AdminPage = () => {
   const [uploading, setUploading] = useState(false);
   const [uploadedImageUrl, setUploadedImageUrl] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const { toast } = useToast();
+
+  const sendEmail = async () => {
+    try {
+      const response = await fetch("/api/email", {
+        method: "POST",
+        body: JSON.stringify({
+          sendTo: "hello@gmail.com",
+          subject: "Test",
+          body: "Test",
+          firstName: "Hello",
+        }),
+      });
+      toast({
+        title: "Email sent",
+        description: "Email has been sent to the user",
+      });
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Error sending email",
+        variant: "destructive",
+      });
+      console.error("Error sending email:", error);
+    }
+  };
 
   const uploadImage = async (file: File) => {
     try {
@@ -89,6 +116,9 @@ const AdminPage = () => {
             />
           </div>
         )}
+      </div>
+      <div className="mt-4">
+        <button onClick={sendEmail}>Send Email</button>
       </div>
     </div>
   );
