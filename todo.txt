@@ -1,0 +1,12 @@
+const sendEmail = async () => {
+    const response = await fetch("/api/email", {
+      method: "POST",
+      body: JSON.stringify({
+        sendTo: "dasunbro1995@gmail.com",
+        subject: "This is a test email",
+        body: "Hello world",
+        firstName: "Hashith",
+      }),
+    });
+    console.log(response);
+  };

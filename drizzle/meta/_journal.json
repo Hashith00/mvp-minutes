@@ -1,0 +1,27 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1734160493797,
+      "tag": "0000_cloudy_amazoness",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1734183476780,
+      "tag": "0001_silky_chimera",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1734240181602,
+      "tag": "0002_married_blue_blade",
+      "breakpoints": true
+    }
+  ]
+}
