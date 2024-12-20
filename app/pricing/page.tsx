@@ -5,7 +5,8 @@ import { Check, Loader2 } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useUser } from "@clerk/nextjs";
 import { useToast } from "@/hooks/use-toast";
-
+import Footer from "@/components/common/footer";
+import Navbar from "@/components/common/nav-bar";
 // Add loading skeleton component
 const PricingCardSkeleton = () => (
   <div className="rounded-lg shadow-lg overflow-hidden border-gray-200 animate-pulse">
@@ -86,94 +87,100 @@ export default function Pricing() {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-      {/* Header Section */}
-      <div className="text-center">
-        <div className="text-pink-600 mb-2">Pricing</div>
-        <h1 className="text-4xl font-bold mb-4">
-          Flexible plans for every team
-        </h1>
-        <p className="text-gray-600 max-w-2xl mx-auto">
-          Choose the plan that best fits your team's needs. Whether you're just
-          getting started or managing large projects, YowManage offers
-          affordable solutions to help you stay organized and productive
-        </p>
-      </div>
+    <>
+      <Navbar />
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        {/* Header Section */}
+        <div className="text-center">
+          <div className="text-pink-600 mb-2">Pricing</div>
+          <h1 className="text-4xl font-bold mb-4">
+            Flexible plans for every team
+          </h1>
+          <p className="text-gray-600 max-w-2xl mx-auto">
+            Choose the plan that best fits your team's needs. Whether you're
+            just getting started or managing large projects, YowManage offers
+            affordable solutions to help you stay organized and productive
+          </p>
+        </div>
 
-      {/* Pricing Cards Grid */}
-      <div className="grid md:grid-cols-3 gap-8 mt-12">
-        {pricingPlans.length === 0 ? (
-          <>
-            <PricingCardSkeleton />
-            <PricingCardSkeleton />
-            <PricingCardSkeleton />
-          </>
-        ) : (
-          pricingPlans.map((plan) => (
-            <div
-              key={plan.id}
-              className="rounded-xl border border-gray-200 p-6 bg-white"
-            >
-              {/* Plan Icon */}
-              <div className="mb-4">
-                {/* Add appropriate icon based on plan type */}
-              </div>
-
-              {/* Plan Name & Description */}
-              <h3 className="text-xl font-semibold mb-2">{plan.productName}</h3>
-              <p className="text-gray-600 text-sm mb-4">
-                {plan.description.split(",")[0]}
-              </p>
-
-              {/* Price */}
-              <div className="mb-6">
-                <span className="text-4xl font-bold">
-                  {plan.price === 0
-                    ? "FREE"
-                    : `$${(Number(plan.price) / 100).toFixed(0)}`}
-                </span>
-                {plan.price !== 0 && (
-                  <span className="text-gray-600 ml-1">/month</span>
-                )}
-              </div>
-
-              {/* Features List */}
-              <ul className="space-y-3 mb-8">
-                {plan.description
-                  .split(",")
-                  .map((feature: string, index: number) => (
-                    <li key={index} className="flex items-start">
-                      <Check className="h-5 w-5 text-indigo-600 mr-2 mt-0.5" />
-                      <span className="text-gray-600">{feature.trim()}</span>
-                    </li>
-                  ))}
-              </ul>
-
-              {/* Action Button */}
-              <Button
-                className={`w-full ${
-                  plan.price === 0
-                    ? "bg-gray-100 text-gray-800 hover:bg-gray-200"
-                    : plan.highlighted
-                      ? "bg-indigo-600 text-white hover:bg-indigo-700"
-                      : "bg-gray-100 text-indigo-600 hover:bg-gray-200"
-                }`}
-                onClick={() => generatePricingLink(plan.id)}
-                disabled={isLoading === plan.id}
+        {/* Pricing Cards Grid */}
+        <div className="grid md:grid-cols-3 gap-8 mt-12">
+          {pricingPlans.length === 0 ? (
+            <>
+              <PricingCardSkeleton />
+              <PricingCardSkeleton />
+              <PricingCardSkeleton />
+            </>
+          ) : (
+            pricingPlans.map((plan) => (
+              <div
+                key={plan.id}
+                className="rounded-xl border border-gray-200 p-6 bg-white"
               >
-                {isLoading === plan.id ? (
-                  <>
-                    <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                    Loading...
-                  </>
-                ) : (
-                  "Start Now"
-                )}
-              </Button>
-            </div>
-          ))
-        )}
+                {/* Plan Icon */}
+                <div className="mb-4">
+                  {/* Add appropriate icon based on plan type */}
+                </div>
+
+                {/* Plan Name & Description */}
+                <h3 className="text-xl font-semibold mb-2">
+                  {plan.productName}
+                </h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  {plan.description.split(",")[0]}
+                </p>
+
+                {/* Price */}
+                <div className="mb-6">
+                  <span className="text-4xl font-bold">
+                    {plan.price === 0
+                      ? "FREE"
+                      : `$${(Number(plan.price) / 100).toFixed(0)}`}
+                  </span>
+                  {plan.price !== 0 && (
+                    <span className="text-gray-600 ml-1">/month</span>
+                  )}
+                </div>
+
+                {/* Features List */}
+                <ul className="space-y-3 mb-8">
+                  {plan.description
+                    .split(",")
+                    .map((feature: string, index: number) => (
+                      <li key={index} className="flex items-start">
+                        <Check className="h-5 w-5 text-indigo-600 mr-2 mt-0.5" />
+                        <span className="text-gray-600">{feature.trim()}</span>
+                      </li>
+                    ))}
+                </ul>
+
+                {/* Action Button */}
+                <Button
+                  className={`w-full ${
+                    plan.price === 0
+                      ? "bg-gray-100 text-gray-800 hover:bg-gray-200"
+                      : plan.highlighted
+                        ? "bg-indigo-600 text-white hover:bg-indigo-700"
+                        : "bg-gray-100 text-indigo-600 hover:bg-gray-200"
+                  }`}
+                  onClick={() => generatePricingLink(plan.id)}
+                  disabled={isLoading === plan.id}
+                >
+                  {isLoading === plan.id ? (
+                    <>
+                      <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                      Loading...
+                    </>
+                  ) : (
+                    "Start Now"
+                  )}
+                </Button>
+              </div>
+            ))
+          )}
+        </div>
       </div>
-    </div>
+      <Footer />
+    </>
   );
 }

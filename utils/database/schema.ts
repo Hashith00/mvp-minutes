@@ -76,5 +76,14 @@ export const subscriptions = pgTable("subscriptions", {
     .references(() => plans.id),
 });
 
+export const blogs = pgTable("blogs", {
+  id: text("id").primaryKey(),
+  title: text("title"),
+  content: text("content"),
+  createdAt: timestamp("createdAt", { mode: "date" }).defaultNow(),
+  author: text("author"),
+  image: text("image"),
+});
+
 export type NewWebhookEvent = typeof webhookEvents.$inferInsert;
 export type NewSubscription = typeof subscriptions.$inferInsert;
