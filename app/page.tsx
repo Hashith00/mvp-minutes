@@ -1,13 +1,6 @@
 "use client";
 import { useState } from "react";
 import {
-  ArrowRight,
-  Code2,
-  CreditCard,
-  Mail,
-  PenSquare,
-  Search,
-  Palette,
   Share2,
   LayoutGrid,
   Settings,

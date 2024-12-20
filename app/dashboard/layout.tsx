@@ -1,14 +1,14 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
 import { Search } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-
+import { UserButton, useUser } from "@clerk/nextjs";
 const Sidebar = () => {
   const pathname = usePathname();
+  const { user } = useUser();
 
   const navigation = [
     { name: "Dashboard", href: "/dashboard", icon: "🏠" },
@@ -64,11 +64,13 @@ const Sidebar = () => {
       {/* User Profile */}
       <div className="absolute bottom-4 left-4 right-4">
         <div className="flex items-center gap-3 rounded-md border p-3">
-          <div className="h-8 w-8 rounded-full bg-primary" />
+          <UserButton />
           <div className="flex-1 min-w-0">
-            <div className="font-medium">Cecillia Yo</div>
+            <div className="font-medium">
+              {user?.firstName} {user?.lastName}
+            </div>
             <div className="text-xs text-muted-foreground truncate">
-              cecilliayo@gmail.com
+              {user?.emailAddresses[0].emailAddress}
             </div>
           </div>
         </div>
