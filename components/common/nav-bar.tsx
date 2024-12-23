@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
-
+import Image from "next/image";
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -12,9 +12,12 @@ const NavBar = () => {
         <div className="flex justify-between h-16">
           <div className="flex">
             <Link href="/" className="flex items-center">
-              <span className="text-xl font-bold text-blue-600">
-                MVP in Minutes
-              </span>
+              <Image
+                src="/logo.png"
+                alt="MVP in Minutes"
+                width={50}
+                height={50}
+              />
             </Link>
           </div>
 
@@ -40,7 +43,7 @@ const NavBar = () => {
               Blogs
             </Link>
 
-            <Link href="/pricing" className="text-gray-600 hover:text-gray-900">
+            <Link href="pricing" className="text-gray-600 hover:text-gray-900">
               Pricing
             </Link>
             <Link

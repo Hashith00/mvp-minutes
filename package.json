@@ -13,8 +13,10 @@
     "push": "drizzle-kit push"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.33.1",
     "@aws-sdk/client-s3": "^3.712.0",
     "@clerk/nextjs": "^6.9.1",
+    "@google/generative-ai": "^0.21.0",
     "@lemonsqueezy/lemonsqueezy.js": "^4.0.0",
     "@neondatabase/serverless": "^0.10.4",
     "@radix-ui/react-slot": "^1.1.1",

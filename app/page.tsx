@@ -9,6 +9,8 @@ import {
   Hammer,
   Rocket,
   Briefcase,
+  Github,
+  Calendar,
 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -46,16 +48,18 @@ export default function Home() {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-8 sm:mt-10 px-4 sm:px-0">
               <Link
-                href="/demo"
-                className="rounded-full px-6 sm:px-8 py-3 bg-indigo-600 text-white hover:bg-indigo-700 transition text-sm sm:text-base"
+                href="https://github.com/Hashith00/mvp-minutes"
+                className="flex items-center rounded-full px-6 sm:px-8 py-3 bg-indigo-600 text-white hover:bg-indigo-700 transition text-sm sm:text-base"
               >
-                Request a Demo
+                <Github className="w-4 h-4 mr-2" />
+                Get MVP in minutes
               </Link>
               <Link
-                href="/contact"
-                className="rounded-full px-6 sm:px-8 py-3 bg-white text-gray-900 border border-gray-300 hover:border-gray-400 transition text-sm sm:text-base"
+                href="https://calendly.com/mailtohashith/30min"
+                className="flex items-center rounded-full px-6 sm:px-8 py-3 bg-white text-gray-900 border border-gray-300 hover:border-gray-400 transition text-sm sm:text-base"
               >
-                Contact Sales
+                <Calendar className="w-4 h-4 mr-2" />
+                Book a Call
               </Link>
             </div>
 
@@ -519,7 +523,12 @@ export default function Home() {
                 </li>
               </ul>
 
-              <button className="w-full py-3 px-6 bg-gray-100 text-gray-800 rounded-lg font-medium">
+              <button
+                className="w-full py-3 px-6 bg-gray-100 text-gray-800 rounded-lg font-medium"
+                onClick={() => {
+                  window.open("/pricing", "_blank");
+                }}
+              >
                 Get Started
               </button>
             </div>
