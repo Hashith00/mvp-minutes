@@ -49,14 +49,14 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-8 sm:mt-10 px-4 sm:px-0">
               <Link
                 href="https://github.com/Hashith00/mvp-minutes"
-                className="flex items-center rounded-full px-6 sm:px-8 py-3 bg-indigo-600 text-white hover:bg-indigo-700 transition text-sm sm:text-base"
+                className="flex items-center justify-center rounded-full px-6 sm:px-8 py-3 bg-indigo-600 text-white hover:bg-indigo-700 transition text-sm sm:text-base"
               >
                 <Github className="w-4 h-4 mr-2" />
                 Get MVP in minutes
               </Link>
               <Link
                 href="https://calendly.com/mailtohashith/30min"
-                className="flex items-center rounded-full px-6 sm:px-8 py-3 bg-white text-gray-900 border border-gray-300 hover:border-gray-400 transition text-sm sm:text-base"
+                className="flex items-center justify-center rounded-full px-6 sm:px-8 py-3 bg-white text-gray-900 border border-gray-300 hover:border-gray-400 transition text-sm sm:text-base"
               >
                 <Calendar className="w-4 h-4 mr-2" />
                 Book a Call
