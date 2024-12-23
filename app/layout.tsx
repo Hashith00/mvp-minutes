@@ -7,7 +7,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Modern SaaS Template",
+  title: "MVP in Minutes - SaaS Template",
   description:
     "A production-ready template for building SaaS applications with Next.js",
 };

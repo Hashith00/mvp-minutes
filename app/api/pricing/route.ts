@@ -7,7 +7,8 @@ export async function GET() {
 
     // Here you can specifies the feature by adding conditions
     for (const plan of response) {
-      plan.description = "Feature 1, Feature 2, Feature 3";
+      plan.description =
+        "Task Management Tools, Team Collaboration (up to 3 members), Basic Project Tracking, Limited File Storage";
     }
 
     if (!response || response.length === 0) {

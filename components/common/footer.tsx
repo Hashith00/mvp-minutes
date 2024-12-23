@@ -29,8 +29,13 @@ const Footer = () => {
           {/* Company Info */}
           <div className="col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <Image src="/logo.png" alt="YowManage" width={40} height={40} />
-              <h3 className="text-xl font-semibold">YowManage</h3>
+              <Image
+                src="/logo.png"
+                alt="MVP in Minutes"
+                width={50}
+                height={50}
+              />
+              <h3 className="text-xl font-semibold">MVP in Minutes</h3>
             </div>
             <div className="mb-6">
               <p className="font-semibold">Address:</p>
@@ -43,8 +48,8 @@ const Footer = () => {
               <a href="tel:1800987654" className="text-gray-600 block">
                 1800 987 654
               </a>
-              <a href="mailto:support@yowmanage.com" className="text-gray-600">
-                support@yowmanage.com
+              <a href="mailto:support@mvp.com" className="text-gray-600">
+                support@mvp.com
               </a>
             </div>
           </div>
@@ -112,7 +117,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t mt-12 pt-6 flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-600">
-            © 2024 YowManage. All rights reserved.
+            © 2024 MVP in Minutes. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link href="/privacy-policy" className="text-gray-600">
