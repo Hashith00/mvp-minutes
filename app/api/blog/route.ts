@@ -15,5 +15,5 @@ export async function POST(request: Request) {
     image,
     createdAt: new Date(),
   });
-  return NextResponse.json(newBlog);
+  return NextResponse.json(newBlog, { status: 201 });
 }

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useRef } from "react";
 import { useToast } from "@/hooks/use-toast";
-
+import AddBlogPostComponent from "@/app/admin/[name]/(components)/AddBlogPostComponent";
 const AdminPage = () => {
   const [uploading, setUploading] = useState(false);
   const [uploadedImageUrl, setUploadedImageUrl] = useState<string | null>(null);
@@ -120,6 +120,7 @@ const AdminPage = () => {
       <div className="mt-4">
         <button onClick={sendEmail}>Send Email</button>
       </div>
+      <AddBlogPostComponent />
     </div>
   );
 };
