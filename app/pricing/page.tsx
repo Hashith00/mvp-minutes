@@ -50,6 +50,7 @@ export default function Pricing() {
         title: "Please login",
         description: "You must be logged in to buy a plan",
       });
+      setIsLoading(null);
       return;
     }
     try {
