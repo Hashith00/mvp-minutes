@@ -1,6 +1,7 @@
 import React from "react";
-import { BlogPostCard } from "@/app/(types)/blogs";
+import type { BlogPostCard } from "@/app/(types)/blogs";
 import Image from "next/image";
+
 const BlogPostCardComponent = ({ post }: { post: BlogPostCard }) => {
   return (
     <a href={`/blog/${post.id}`}>
