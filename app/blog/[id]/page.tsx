@@ -1,27 +1,27 @@
-"use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { BlogPost } from "@/app/(types)/blogs";
 import { Clock } from "lucide-react";
-// Add params as a prop with type definition
+
 interface BlogPageProps {
-  params: {
+  params: Promise<{
     id: string;
-  };
+  }>;
 }
 
-const BlogPage = ({ params }: BlogPageProps) => {
-  // Access the id from params
-  const { id } = params;
-  const [blogPost, setBlogPost] = useState<BlogPost | null>(null);
-  const fetchBlogPost = async () => {
-    const response = await fetch(`/api/blog/${id}`);
-    const data = await response.json();
-    console.log(data[0]);
-    setBlogPost(data[0]);
-  };
-  useEffect(() => {
-    fetchBlogPost();
-  }, []);
+async function getBlogPost(id: string) {
+  const response = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/blog/${id}`,
+    {
+      cache: "no-store", // or 'force-cache' if you want to cache the result
+    }
+  );
+  const data = await response.json();
+  return data[0];
+}
+
+const BlogPage = async ({ params }: BlogPageProps) => {
+  const { id }: { id: string } = await params;
+  const blogPost = await getBlogPost(id);
 
   if (!blogPost) {
     return (
@@ -58,11 +58,13 @@ const BlogPage = ({ params }: BlogPageProps) => {
       </header>
 
       <div className="prose prose-lg max-w-none">
-        {blogPost.content.split("\n").map((paragraph, index) => (
-          <p key={index} className="mb-4">
-            {paragraph}
-          </p>
-        ))}
+        {blogPost.content
+          .split("\n")
+          .map((paragraph: string, index: number) => (
+            <p key={index} className="mb-4">
+              {paragraph}
+            </p>
+          ))}
       </div>
 
       <footer className="mt-8 pt-8 border-t border-gray-200">
