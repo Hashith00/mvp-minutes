@@ -55,7 +55,7 @@ export default function Home() {
                 Get MVP in minutes
               </Link>
               <Link
-                href="https://calendly.com/mailtohashith/30min"
+                href="https://cal.com/hashith-sithuruwan-foqmkf"
                 className="flex items-center justify-center rounded-full px-6 sm:px-8 py-3 bg-white text-gray-900 border border-gray-300 hover:border-gray-400 transition text-sm sm:text-base"
               >
                 <Calendar className="w-4 h-4 mr-2" />
