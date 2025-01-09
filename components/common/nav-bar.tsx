@@ -43,7 +43,7 @@ const NavBar = () => {
               Blogs
             </Link>
 
-            <Link href="pricing" className="text-gray-600 hover:text-gray-900">
+            <Link href="/pricing" className="text-gray-600 hover:text-gray-900">
               Pricing
             </Link>
             <Link
@@ -65,23 +65,18 @@ const NavBar = () => {
         <div className={`md:hidden ${isMenuOpen ? "block" : "hidden"}`}>
           <div className="pt-2 pb-3 space-y-1">
             <Link
-              href="#features"
+              href="/blog"
               className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md"
             >
-              Features
+              Blogs
             </Link>
             <Link
-              href="#pricing"
+              href="/pricing"
               className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md"
             >
               Pricing
             </Link>
-            <Link
-              href="#docs"
-              className="block px-3 py-2 text-base font-medium text-gray-600 hover:text-gray-900 hover:bg-gray-50 rounded-md"
-            >
-              Documentation
-            </Link>
+
             <Link
               href="/signup"
               className="block px-3 py-2 text-base font-medium text-blue-600 hover:text-blue-700 hover:bg-gray-50 rounded-md"
